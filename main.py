@@ -46,19 +46,19 @@ camera.speed = 0.5
 camera.rotationSpeed = 0.8
 
 #light setup
-light = Light(Vector3(-3, 2, -10))
+light = Light(Vector3(0.9, 0.9, -1))
 hue = 0
 
 angle = 0
 moveLight = True
 run = True
-app = SoftwareRender()
+# app = SoftwareRender()
 while run:
     clock.tick(FPS)
-    app.delta_time = clock.tick(FPS)
-    app.draw()
-    app.player.update()
-    app.ray_casting.update()
+    # app.delta_time = clock.tick(FPS)
+    # app.draw()
+    # app.player.update()
+    # app.ray_casting.update()
     dt = clock.tick(fps)/100
     frameRate = clock.get_fps()
     run = HandleEvent(camera, dt)
@@ -75,7 +75,7 @@ while run:
     # apply the transformation matrix here
     # cube.transform = Matrix.scaling(0.5)@Matrix.rotation_x(angle)
     # cube1.transform =Matrix.scaling(2)
-    # player.transform = Matrix.scaling(3)
+    player.transform = Matrix.scaling(2)
     scene.update(
         dt = dt,
         camera=camera,

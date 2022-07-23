@@ -60,6 +60,7 @@ def Normalize(a):
     if mg == 0:
         return Vector3()
     return Vector3(a.x/mg, a.y/mg, a.z/mg)
+    
 
 def PlaneLineIntersection(pos, normal, lineStart, lineEnd):
     normal = Normalize(normal)

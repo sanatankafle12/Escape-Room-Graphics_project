@@ -14,5 +14,5 @@ def HandleEvent(camera, deltaTime):
                 x, y = event.rel
                 x /= mouse_sensitivity
                 y /= mouse_sensitivity
-                # camera.HandleMouseEvent(x, y, deltaTime)
+                camera.HandleMouseEvent(x, y, deltaTime)
     return running

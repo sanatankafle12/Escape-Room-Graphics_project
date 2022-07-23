@@ -108,8 +108,6 @@ def TriangleClipped(pos, normal, triangle, outTriangle, clippingDebug=False):
 
     if insideCount == 2 and outsideCount == 1:
 
-        # outTriangle[0].color = (55, 60, 255)
-        # outTriangle[1].color = (255,51, 12)
         outTriangle[0].color = triangle.color if clippingDebug==False else blue
         outTriangle[1].color = triangle.color if clippingDebug==False else green
         outTriangle[0].vertex1 = insidePoints[1]

@@ -89,10 +89,10 @@ class RayCasting:
 
             color = [200/(1+depth**5*0.0002)]*3
 
-            self.ray_casting_result.append((depth,proj_height,texture,offset))
-            # else:
-            #     pg.draw.rect(self.game.screen,color,
-            #                 (ray*SCALE, HALF_HEIGHT-proj_height//2,SCALE,proj_height))
+            # self.ray_casting_result.append((depth,proj_height,texture,offset))
+
+            pg.draw.rect(self.game.screen,color,
+                            (ray*SCALE, HALF_HEIGHT-proj_height//2,SCALE,proj_height))
             ray_angle += DELTA_ANGLE
 
     def update(self):
