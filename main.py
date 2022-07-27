@@ -23,9 +23,9 @@ clock = pygame.time.Clock()
 fps = 60
 
 
-# cube = Mesh()
-# cube.triangles = CubeTriangles((225,225,84))
-# cube.position = Vector3(3, 0, 0)
+cube = Mesh()
+cube.triangles = CubeTriangles((225,225,84))
+cube.position = Vector3(3, 0, 0)
 
 # cube1 = Mesh()
 # cube1.triangles = CubeTriangles((225,200,84))
@@ -33,15 +33,20 @@ fps = 60
 
 player = Mesh()
 player.triangles = LoadMesh("assets/player.obj", (255, 255, 0))
-player.position = Vector3(5,-10,-5)
+player.position = Vector3(-5,-10,-5)
+
+bottom_surface = Mesh()
+bottom_surface.triangles = LoadMesh("assets/bottom.obj", (255, 255, 0))
+bottom_surface.position = Vector3(0,0,0)
 
 
 scene = Scene()
-# scene.world.append(cube)
+scene.world.append(cube)
 # scene.world.append(cube1)
 scene.world.append(player)
+scene.world.append(bottom_surface)
 #camera setup
-camera = Camera(Vector3(0, 0, 0), 0.1, 100.0, 75.0)
+camera = Camera(Vector3(-2, 0, 0), 0.1, 100.0, 75.0)
 camera.speed = 0.5
 camera.rotationSpeed = 0.8
 
@@ -52,13 +57,13 @@ hue = 0
 angle = 0
 moveLight = True
 run = True
-# app = SoftwareRender()
+app = SoftwareRender()
 while run:
     clock.tick(FPS)
-    # app.delta_time = clock.tick(FPS)
-    # app.draw()
-    # app.player.update()
-    # app.ray_casting.update()
+    app.delta_time = clock.tick(FPS)
+    app.draw()
+    app.player.update()
+    app.ray_casting.update()
     dt = clock.tick(fps)/100
     frameRate = clock.get_fps()
     run = HandleEvent(camera, dt)
@@ -73,9 +78,9 @@ while run:
 
 
     # apply the transformation matrix here
-    # cube.transform = Matrix.scaling(0.5)@Matrix.rotation_x(angle)
+    cube.transform = Matrix.scaling(0.5)@Matrix.rotation_x(angle)
+    bottom_surface.transform = Matrix.scaling(10)
     # cube1.transform =Matrix.scaling(2)
-    player.transform = Matrix.scaling(2)
     scene.update(
         dt = dt,
         camera=camera,
@@ -92,7 +97,7 @@ while run:
         wireframeColor=(255, 255, 255),
         ChangingColor=hue)
     pygame.display.flip()
-    angle += 0.01
+    angle += 0.1
 
 pygame.quit()
 sys.exit()

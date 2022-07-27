@@ -3,6 +3,7 @@ import pygame as pg
 import math
 import sys
 
+
 class Player:
     def __init__(self,game):
         self.game = game
