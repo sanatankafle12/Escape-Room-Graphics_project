@@ -17,9 +17,8 @@ class SoftwareRender:
         self.new_game()
     
     def draw(self):
-        self.screen.fill((172,214,236))
+        self.screen.fill('black')
         self.object_render.draw()
-
 
     def new_game(self):
         self.map = Map(self)

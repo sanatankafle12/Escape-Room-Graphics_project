@@ -48,9 +48,7 @@ class Scene:
             origins.append(origin)
             normals.append(normal)
 
-        if showNormals == True: #---to fix later
-            # get the normal vectors
+        if showNormals == True:
             for i, n in enumerate(normals):
                 endPoint = origins[i] + (n)
-                #pygame.draw.circle(screen, (0,255, 0), endPoint.GetTuple(), 10)
                 pygame.draw.line(screen, (0, 255, 0), origins[i].GetTuple(), endPoint.GetTuple(), 2)

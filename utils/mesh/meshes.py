@@ -29,19 +29,6 @@ def CubeTriangles(color, position=Vector3(), scale=1):
 
 
 
-def QuadTriangles(color=(255, 255, 255), size=5):
-    vertices = [
-        Vector3(-size, -size, -size),
-        Vector3(-size, size, -size),
-        Vector3(size, size, -size),
-        Vector3(size, -size, -size)
-    ]
-
-    return [
-        Triangle(vertices[0], vertices[1], vertices[2], color),
-        Triangle(vertices[0], vertices[2], vertices[3], color)
-    ]
-
 def PlaneTriangles(color=(255, 255, 255), resolution=10, size=2):
     meshData = []
     vertices = [[None for i in range(resolution)] for j in range(resolution)]

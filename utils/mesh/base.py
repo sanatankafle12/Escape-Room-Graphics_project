@@ -35,16 +35,6 @@ class Mesh:
         tris = meshes.CubeTriangles(size, color)
         return cls(tris, position, scale)
 
-    @classmethod
-    def icosphere(
-        cls,
-        color: tuple[int, int, int],
-        subdivision=0,
-        radius=1,
-        position: Optional[Vector3] = None,
-    ) -> Mesh:
-        tris = spheres.IcosphereTriangles(color, subdivision, radius)
-        return cls(tris, position)
 
     def update(
         self, screen, fill, wireframe, dt, camera, light, depth, clippingDebug, hue=0

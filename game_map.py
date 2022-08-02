@@ -11,7 +11,7 @@ mini_map = [
     [1, _, _, _, _, 1, _, _, 1, 1, 1, _,1],
     [1, _, 1, _, _, _, _, _, 1, _, _, _,1],
     [1, _, 1, 1, 1, _, _, _, 1, _, _, _,1],
-    [1, _, 1, 1, _, 1, _, _, _, 1, _, _,1],
+    [1, _, _, _, _, 1, _, _, _, 1, _, _,1],
     [1, _, 1, 1, _, 1, _, _, _, 1, _, _,1],
     [1, _, _, _, _, 1, _, _, _, 1, _, _,1],
     [1, _, _, _, _, 1, _, _, _, _, _, _,1],
@@ -35,5 +35,6 @@ class Map:
                     self.world_map[(i, j)] = value
 
     def draw(self):
-        [pg.draw.rect(self.game.screen, 'darkgray', (pos[0] * _00, pos[_] * _00, _00, _00), _)
-         for pos in self.world_map]
+        # [pg.draw.rect(self.game.screen, 'darkgray', (pos[0] * _00, pos[_] * _00, _00, _00), _)
+        #  for pos in self.world_map]
+        pass
