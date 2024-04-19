@@ -4,8 +4,10 @@ Model is designed in blender and implemented using 3D transformation whereas the
 <img src="https://github.com/sanatankafle12/Escape-Room-Graphics_project/assets/42962016/1832e541-f9d8-4f89-808b-8055dc91425d" height = 250px>
 
 <h1>Requirements:</h1>
-- Python
-- Pygame
-- Numpy
+<ul>
+  <li>Python</li>
+  <li>Pygame</li>
+  <li>Numpy</li>
+</ul>
 
-install the required packages using pip install and type python main.py in command line
+install the required packages using pip install and type python main.py in the command line
